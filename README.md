@@ -28,6 +28,10 @@
 * [Rust + Tauri + Svelte](https://jbarszczewski.com/rust-tauri-svelte-tutorial)
 
 
+#### Tailwindcss + Svelte + Electron
+
+* [How to use Svelte with Electron](https://fireship.io/snippets/svelte-electron-setup/)
+
 #### Interesting
 
 * [How to build a shared C++ library for iOS and Android](https://medium.com/safetycultureengineering/how-to-build-a-shared-c-library-for-ios-and-android-a3817aba5798)

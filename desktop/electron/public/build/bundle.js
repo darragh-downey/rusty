@@ -42,15 +42,6 @@ var app = (function () {
     function text(data) {
         return document.createTextNode(data);
     }
-    function space() {
-        return text(' ');
-    }
-    function attr(node, attribute, value) {
-        if (value == null)
-            node.removeAttribute(attribute);
-        else if (node.getAttribute(attribute) !== value)
-            node.setAttribute(attribute, value);
-    }
     function children(element) {
         return Array.from(element.childNodes);
     }
@@ -276,13 +267,6 @@ var app = (function () {
         dispatch_dev('SvelteDOMRemove', { node });
         detach(node);
     }
-    function attr_dev(node, attribute, value) {
-        attr(node, attribute, value);
-        if (value == null)
-            dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
-        else
-            dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
-    }
     function set_data_dev(text, data) {
         data = '' + data;
         if (text.wholeText === data)
@@ -324,34 +308,14 @@ var app = (function () {
     function create_fragment(ctx) {
     	let main;
     	let h1;
-    	let t0;
-    	let t1;
-    	let t2;
-    	let t3;
-    	let p;
-    	let t4;
-    	let a;
-    	let t6;
+    	let t;
 
     	const block = {
     		c: function create() {
     			main = element("main");
     			h1 = element("h1");
-    			t0 = text("Hello ");
-    			t1 = text(/*name*/ ctx[0]);
-    			t2 = text("!");
-    			t3 = space();
-    			p = element("p");
-    			t4 = text("Visit the ");
-    			a = element("a");
-    			a.textContent = "Svelte tutorial";
-    			t6 = text(" to learn how to build Svelte apps.");
-    			attr_dev(h1, "class", "svelte-2x1evt");
+    			t = text(/*name*/ ctx[0]);
     			add_location(h1, file, 5, 1, 46);
-    			attr_dev(a, "href", "https://svelte.dev/tutorial");
-    			add_location(a, file, 6, 14, 83);
-    			add_location(p, file, 6, 1, 70);
-    			attr_dev(main, "class", "svelte-2x1evt");
     			add_location(main, file, 4, 0, 38);
     		},
     		l: function claim(nodes) {
@@ -360,17 +324,10 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
     			append_dev(main, h1);
-    			append_dev(h1, t0);
-    			append_dev(h1, t1);
-    			append_dev(h1, t2);
-    			append_dev(main, t3);
-    			append_dev(main, p);
-    			append_dev(p, t4);
-    			append_dev(p, a);
-    			append_dev(p, t6);
+    			append_dev(h1, t);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*name*/ 1) set_data_dev(t1, /*name*/ ctx[0]);
+    			if (dirty & /*name*/ 1) set_data_dev(t, /*name*/ ctx[0]);
     		},
     		i: noop,
     		o: noop,
@@ -449,7 +406,7 @@ var app = (function () {
     const app = new App({
     	target: document.body,
     	props: {
-    		name: 'world'
+    		name: 'Rusty-Electron'
     	}
     });
 
