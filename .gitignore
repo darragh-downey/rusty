@@ -1,2 +1,11 @@
 bazel-*
 bazel*/*
+
+*/.DS_Store
+*/node_modules
+*/build
+*/.svelte-kit
+*/package
+
+*/.idea
+*/target
