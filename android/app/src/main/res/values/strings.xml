@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Rusty</string>
+    <string name="roll">Roll</string>
+    <string name="result" />
+</resources>
