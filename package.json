@@ -1,0 +1,10 @@
+{
+  "name": "rusty-desktop",
+  "version": "1.0.0",
+  "description": "Simple rust cross-compilation demo",
+  "main": "index.js",
+  "repository": "git@github.com:darragh-downey/rusty.git",
+  "author": "Darragh Downey <darragh.downey90@gmail.com>",
+  "license": "MIT",
+  "private": null
+}
